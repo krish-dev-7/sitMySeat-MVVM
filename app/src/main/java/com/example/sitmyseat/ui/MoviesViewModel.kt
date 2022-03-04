@@ -1,5 +1,6 @@
+package com.example.sitmyseat.ui
 
-
+import MoviesRepository
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -22,10 +23,10 @@ class MoviesViewModel(
     private fun getMoviesVM() = viewModelScope.launch {
         moviesPage.postValue(Resource.Loading())
         val response = moviesRep.getMoviesR()
-        moviesPage.postValue(handleBreakingNewsResponse(response))
+        moviesPage.postValue(handleResp(response))
     }
 
-    private fun handleBreakingNewsResponse(response: Response<MovieResponse>) : Resource<MovieResponse> {
+    private fun handleResp(response: Response<MovieResponse>) : Resource<MovieResponse> {
         if(response.isSuccessful) {
             response.body()?.let { resultResponse ->
                 return Resource.Success(resultResponse)

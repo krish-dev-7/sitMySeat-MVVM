@@ -1,13 +1,11 @@
 package com.example.sitmyseat.ui
 
 import MoviesRepository
-import MoviesViewModel
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sitmyseat.R
